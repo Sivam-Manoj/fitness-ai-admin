@@ -5,8 +5,12 @@ import DataTable from "@/components/Datatable";
 import FileUploader from "@/utils/FileDropzone";
 import DeleteButton from "@/components/DeleteButton";
 
+interface Metadata {
+  source: string;
+  textChunk: string;
+}
 export default function PdfUpload() {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<Metadata[]>([]);
 
   // Fetch Data from Backend
   const fetchData = async () => {
